@@ -76,7 +76,21 @@ def generate_ad_copy(product_service, target_audience, key_benefits, tone):
         )
         
         content = response.choices[0].message.content
-        return json.loads(content)
+        parsed_output = json.loads(content)
+
+        return {
+            "headline": parsed_output.get("headline"),
+            "primary_text": parsed_output.get("primary_text"),
+            "description": parsed_output.get("description"),
+            "call_to_action": parsed_output.get("call_to_action"),
+
+        
+            "success": True
+    }
+    
 
     except Exception as e:
-        return {"error": str(e)}
+        return {
+            "success": False,
+            "error": str(e)
+        }
