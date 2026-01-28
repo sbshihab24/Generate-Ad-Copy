@@ -1,5 +1,5 @@
 import streamlit as st
-from backend.ai_service import generate_ad_copy
+from backend.ai_generate_ad_copy import generate_ad_copy
 
 # Helper for image conversion
 try:
