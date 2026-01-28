@@ -1,4 +1,6 @@
 import streamlit as st
+# Forced update to fix deployment sync
+
 from dotenv import load_dotenv
 from streamlit_app.styles import apply_custom_styles
 from streamlit_app.layout import render_app
